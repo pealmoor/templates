@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profesores</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>DivisistWeb</h2>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="horario.html">Horario</a></li>
+                <li><a href="profesores.html" class="active">Profesores</a></li>
+                <li><a href="notas.html">Notas</a></li>
+            </ul>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <div class="user-menu">
+                <img src="images/usericon.webp" alt="Usuario" class="user-avatar">
+                <div class="user-dropdown hidden">
+                    <p><a href="#">Configuración</a></p>
+                    <p class="logout"><a href="#">Cerrar Sesión</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h2>Profesores</h2>
+            
+            <div class="card-container">
+                <!-- Tarjetas de ejemplo -->
+                <div class="card" onclick="toggleCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Antonio Molina</h3>
+                        </div>
+                        <div class="card-back">
+                            <p><strong>Materia:</strong> Programación Web</p>
+                            <p><strong>Correo:</strong> ajmp1953@gmail.com</p>
+                            <p><strong>Teléfono:</strong> 3158014367</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" onclick="toggleCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Doris Ortiz</h3>
+                        </div>
+                        <div class="card-back">
+                            <p><strong>Materia:</strong> Electronica</p>
+                            <p><strong>Correo:</strong> dbom0410@hotmail.com</p>
+                            <p><strong>Teléfono:</strong> 3212656173</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

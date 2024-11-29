@@ -1,0 +1,340 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Estructura del Dashboard */
+.dashboard {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 70px 1fr;
+    height: 100vh;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main";
+    background-color: #fff;
+}
+
+/* Sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    text-align: center; /* Centrado del texto en el sidebar */
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center; /* Centrado del encabezado */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar ul li:hover {
+    background-color: #d0021b;
+    transform: scale(1.05);
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    color: #fff;
+}
+
+/* Header */
+.header {
+    grid-area: header;
+    background-color: #d0021b;
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Asegura que el contenido se distribuya de forma equitativa */
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    text-align: center; /* Centrado de elementos en el header */
+}
+
+.user-menu {
+    position: relative;
+    cursor: pointer;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-left: auto; /* Para que el avatar se posicione a la derecha */
+    margin-right: auto; /* Para que el avatar se centre */
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 150px;
+    z-index: 1000;
+}
+
+.user-dropdown p {
+    margin: 10px 0;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.user-dropdown .logout {
+    color: red;
+}
+
+.user-dropdown p:hover {
+    color: #d0021b;
+}
+
+/* Main Content */
+.main-content {
+    grid-area: main;
+    padding: 30px;
+    background-color: #f9f9f9;
+    color: #333;
+    overflow-y: auto;
+    text-align: center; /* Centrado del contenido en la sección principal */
+}
+
+.main-content h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000;
+    text-align: center; /* Centrado del título */
+}
+
+.schedule {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.schedule th, .schedule td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.schedule th {
+    background-color: #d0021b;
+    color: #fff;
+}
+
+.schedule td {
+    background-color: #f4f4f4;
+}
+
+.schedule tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Enlaces Activos */
+.sidebar ul li a.active {
+    background-color: #d0021b;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 12px;
+    text-align: center; /* Centrado del texto en el enlace */
+}
+
+.sidebar ul li a.active:hover {
+    background-color: #d0021b;
+}
+
+/* Botones */
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d0021b;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #c5011b;
+}
+
+/* Diseño de Responsividad */
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .user-menu {
+        margin-top: 10px;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+/* Tarjetas */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centrado de las tarjetas */
+    margin-top: 20px; /* Añadir espacio superior */
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center; /* Centrado de la tarjeta */
+    align-items: center; /* Centrado de la tarjeta */
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    display: flex; /* Esto asegura que el contenido dentro de la tarjeta se centre */
+    justify-content: center;
+    align-items: center;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* Permite que el contenido esté en columnas */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px; /* Espaciado interno */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Evita que el contenido se salga */
+}
+
+.card-front {
+    background-color: #d0021b;
+    color: white;
+}
+
+.card-back {
+    background-color: #f4f4f4;
+    color: #333;
+    transform: rotateY(180deg);
+    font-size: 14px; /* Ajusta el tamaño de la fuente */
+    line-height: 1.4; /* Mejora la legibilidad */
+}
+
+/* Asegurar que el texto dentro de las tarjetas no desborde */
+.card-back p {
+    margin: 5px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal; /* Permitir que el texto ocupe múltiples líneas */
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.note-input {
+    width: 90%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.dropdown-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu p {
+    margin: 5px 0;
+}
+
+.hidden {
+    display: none;
+}

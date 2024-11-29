@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}DivisistWeb{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>DivisistWeb</h2>
+            <ul>
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="{% url 'horario' %}">Horario</a></li>
+                <li><a href="{% url 'profesores' %}">Profesores</a></li>
+                <li><a href="{% url 'notas' %}">Notas</a></li>
+            </ul>
+        </div>
+        <!-- Header -->
+        <div class="header">
+            <div class="user-menu">
+                <img src="{% static 'images/usericon.webp' %}" alt="Usuario" class="user-avatar">
+                <div class="user-dropdown hidden">
+                    <p><a href="#">Configuración</a></p>
+                    <p class="logout"><a href="#">Cerrar Sesión</a></p>
+                </div>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="main-content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>

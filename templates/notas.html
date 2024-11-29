@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>DivisistWeb</h2>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="horario.html">Horario</a></li>
+                <li><a href="profesores.html">Profesores</a></li>
+                <li><a class="active" href="notas.html">Notas</a></li>
+            </ul>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <div class="user-menu">
+                <img src="images/usericon.webp" alt="Usuario" class="user-avatar">
+                <div class="user-dropdown hidden">
+                    <p><a href="#">Configuración</a></p>
+                    <p class="logout"><a href="#">Cerrar Sesión</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h2>Notas</h2>
+            <p>Aquí podrás consultar tus calificaciones más recientes.</p>
+
+            <!-- Tabla de Materias -->
+            <table class="schedule">
+                <thead>
+                    <tr>
+                        <th>Materia</th>
+                        <th>Profesor</th>
+                        <th>Semestre</th>
+                        <th>Créditos</th>
+                        <th>Nota</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Programación</td>
+                        <td>Antonio Molina</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4.0</td>
+                        <td>
+                            <button class="dropdown-btn">Ver Notas</button>
+                            <div class="dropdown-menu hidden">
+                                <p>Primer Parcial: 4.5</p>
+                                <p>Segundo Parcial: 4.0</p>
+                                <p>Tercer Parcial: 3.8</p>
+                                <p>Examen Final: 4.7</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Electronica</td>
+                        <td>Doris Ortiz</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4.2</td>
+                        <td>
+                            <button class="dropdown-btn">Ver Notas</button>
+                            <div class="dropdown-menu hidden">
+                                <p>Primer Parcial: 4.2</p>
+                                <p>Segundo Parcial: 4.5</p>
+                                <p>Tercer Parcial: 4.0</p>
+                                <p>Examen Final: 4.3</p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Botón para Calcular Notas -->
+            <button id="calculate-notes-btn">Calcular Notas</button>
+
+            <!-- Tabla Adicional -->
+            <div id="additional-table" class="hidden">
+                <h3>Distribución de Notas</h3>
+                <table class="schedule">
+                    <thead>
+                        <tr>
+                            <th>Parcial 1 (25%)</th>
+                            <th>Parcial 2 (25%)</th>
+                            <th>Parcial 3 (25%)</th>
+                            <th>Examen Final (25%)</th>
+                            <th>Promedio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="number" class="note-input" id="partial1"></td>
+                            <td><input type="number" class="note-input" id="partial2"></td>
+                            <td><input type="number" class="note-input" id="partial3"></td>
+                            <td><input type="number" class="note-input" id="final"></td>
+                            <td id="average">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button id="calculate-average-btn">Calcular Promedio</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

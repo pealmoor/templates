@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>DivisistWeb</h2>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="horario.html">Horario</a></li>
+                <li><a href="profesores.html">Profesores</a></li>
+                <li><a href="notas.html">Notas</a></li>
+            </ul>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <div class="user-menu">
+                <img src="images/usericon.webp" alt="Usuario" class="user-avatar">
+                <div class="user-dropdown hidden">
+                    <p><a href="#">Configuración</a></p>
+                    <p class="logout"><a href="#">Cerrar Sesión</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h2>Bienvenido a DivisistWeb</h2>
+            
+
+            <!-- Sección de video -->
+            <div class="content-section">
+                <h3>Video de Bienvenida</h3>
+                <div class="video-container">
+                    <!-- Coloca tu video aquí -->
+                    <video width="600" controls>
+                        <source src="videos/videoufps.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                </div>
+            </div>
+
+            <!-- Sección de información de la universidad -->
+            <div class="content-section">
+                <h3>Información de la Universidad</h3>
+                <button onclick="showInfo('mision')">Misión</button>
+                <button onclick="showInfo('vision')">Visión</button>
+                <button onclick="showInfo('programa')">Programa Académico</button>
+
+                <div id="university-info" class="university-info">
+                    <!-- Aquí se mostrará la información seleccionada -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h2>Bienvenido a DivisistWeb</h2>
+            
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
